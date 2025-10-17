@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+2048 — Functional Implementation (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A functional, modular implementation of the classic 2048 game with a dynamic GUI.
+This repository contains a configurable Y×Y board (default 4×4), functional-style game logic, score tracking, keyboard and swipe controls, and all features required to play and restart the game. The app is written as a React web app using functional components and pure, testable game logic.
 
-## Available Scripts
+Demo
 
-In the project directory, you can run:
+Live demo: https://<Gayatriloungani>.github.io/EE
+Repository: https://github.com/<Gayatriloungani>/EE
 
-### `npm start`
+Replace the URLs above with your repository and deployment URLs after pushing code.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Features
 
-### `npm test`
+Tech & Design Choices
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Installation & Run (Local)
 
-### `npm run build`
+Build & Deploy
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Gameplay & Controls
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Implementation Details
 
-### `npm run eject`
+Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Testing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Features
 
-## Learn More
+Default board size: 4×4 (configurable to any Y×Y).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start with two random tiles (value 2 or 4).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Slide tiles up / down / left / right using keyboard or GUI controls.
 
-### Code Splitting
+Matching tiles merge to their sum (e.g., 2 + 2 = 4).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+After every valid move, a new tile (2 or 4) spawns in a random empty cell.
 
-### Analyzing the Bundle Size
+Win condition: when a tile reaches 2048.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Lose condition: when no valid moves remain.
 
-### Making a Progressive Web App
+Tracks and displays score based on merged tiles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Restart button in GUI.
 
-### Advanced Configuration
+Pure, functional logic for game state and moves (easy to test & reuse).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Modular codebase — UI separated from game logic.
 
-### Deployment
+Tech & Design Choices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Framework: React (functional components & hooks)
 
-### `npm run build` fails to minify
+Language: JavaScript (ES6+). TypeScript optional (recommended for production).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Styling: CSS modules / Tailwind (optional)
+
+Architecture:
+
+Game logic implemented as pure functions (no side effects): moveLeft, moveRight, moveUp, moveDown, mergeRow, spawnRandomTile, hasMoves, etc.
+
+UI uses React state (useReducer or useState) and dispatches results from pure functions.
+
+Clear separation: src/game (logic) and src/ui (components).
+
+Deployment: GitHub Pages, Vercel, Netlify, or any static host.
+
+Installation & Run (Local)
+Prerequisites
+
+Node 18+ and npm (or pnpm/yarn)
+
+Git
+
+Clone & Run
+# clone repo
+git clone https://github.com/<Gayatriloungani>/EE.git
+cd Exponent_energy
+
+# install dependencies
+npm install
+
+# start dev server
+npm start
+
+
+Open http://localhost:3000 (or the port printed in terminal).
+
+Build & Deploy
+Build
+npm run build
+
+
+This produces a build/ folder ready for deployment.
+
+Deploy to GitHub Pages (example)
+
+Install gh-pages:
+
+npm install --save-dev gh-pages
+
+
+Add to package.json:
+
+"homepage": "https://<Gayatriloungani>.github.io/EE",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+
+
+Deploy:
+
+npm run deploy
