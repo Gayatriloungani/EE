@@ -1,7 +1,6 @@
 2048 — Functional Implementation (React)
 
-A functional, modular implementation of the classic 2048 game with a dynamic GUI.
-This repository contains a configurable Y×Y board (default 4×4), functional-style game logic, score tracking, keyboard and swipe controls, and all features required to play and restart the game. The app is written as a React web app using functional components and pure, testable game logic.
+A functional, modular implementation of the classic 2048 game with a dynamic GUI. This repository contains a configurable Y×Y board (default 4×4), functional-style game logic, score tracking, keyboard and swipe controls, and all features required to play and restart the game. The app is written as a React web app using functional components and pure, testable game logic.
 
 Table of Contents
 
@@ -69,31 +68,26 @@ Clear separation: src/game (logic) and src/ui (components).
 
 Deployment: GitHub Pages, Vercel, Netlify, or any static host.
 
-Installation & Run (Local)
-Prerequisites
+Installation & Run (Local) Prerequisites
 
 Node 18+ and npm (or pnpm/yarn)
 
 Git
 
 Clone & Run
-# clone repo
-git clone https://github.com/<Gayatriloungani>/EE.git
-cd Exponent_energy
 
-# install dependencies
+clone repo
+git clone https://github.com/Gayatriloungani/EE.git cd Exponent_energy
+
+install dependencies
 npm install
 
-# start dev server
+start dev server
 npm start
-
 
 Open http://localhost:3000 (or the port printed in terminal).
 
-Build & Deploy
-Build
-npm run build
-
+Build & Deploy Build npm run build
 
 This produces a build/ folder ready for deployment.
 
@@ -103,15 +97,9 @@ Install gh-pages:
 
 npm install --save-dev gh-pages
 
-
 Add to package.json:
 
-"homepage": "https://<Gayatriloungani>.github.io/EE",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-
+"scripts": { "predeploy": "npm run build", "deploy": "gh-pages -d build" }
 
 Deploy:
 
